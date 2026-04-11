@@ -57,6 +57,16 @@
 <body>
     <div id="overlay" class="overlay" onclick="closePanel()"></div>
 
+  <div id="mod-info" class="mod-panel" style="max-height: 80vh; overflow-y: auto;">
+        <h3 style="color: var(--accent); margin-top:0; text-align:center;">Galley Cheat Sheet</h3>
+        <div style="font-size: 13px; line-height: 1.5; margin-bottom: 15px;">
+            <p><strong style="color:var(--modifier)">🍹 Adding Drinks:</strong> Tap a category, then tap the drink. For Coffee/Tea, Beer, or Liquors, a quick popup will ask for your prep, ice, or mixer options.</p>
+            <p><strong style="color:var(--order-green)">⌨️ Strange/Custom Orders:</strong> If a passenger asks for something weird or not on the menu, just tap the <strong>Other ⌨️</strong> button on the main drink screen to type it in manually.</p>
+            <p><strong style="color:var(--meal-orange)">🍱 Meals & Inventory:</strong> Check the "Meals" box at the top to show the food buttons. Tapping Meal A or B automatically deducts it from your inventory counter. If you accidentally add one and hit "Clear Seat," the meal goes right back into your inventory.</p>
+        </div>
+        <button class="close-btn" onclick="closeMod()">GOT IT</button>
+    </div>
+  
     <div id="mod-coffee" class="mod-panel">
         <h3 id="hot-title" style="text-align:center; color: var(--modifier); margin-top:0;">Prep</h3>
         <button onclick="saveHotDrink(true)" style="width:100%; padding:12px; margin-bottom:10px; background:#111; color:white; border:1px solid #555; border-radius:8px;">JUST PLAIN</button>
@@ -74,7 +84,7 @@
     </div>
 
     <div class="header">
-        <strong>Republic E175</strong>
+        <strong>E175</strong><button onclick="document.getElementById('mod-info').classList.add('active')" style="background:none; border:1px solid #888; color:#888; border-radius:50%; width:22px; height:22px; font-size:12px; margin-left:8px; vertical-align: middle;">?</button>
         <div class="carrier-toggles">
             <button class="carrier-btn aa active" onclick="setCarrier('AA')">AA</button>
             <button class="carrier-btn dl" onclick="setCarrier('DL')">DL</button>
