@@ -56,7 +56,7 @@
 </head>
 <body>
     <div id="overlay" class="overlay" onclick="closePanel()"></div>
-
+<div id="side-indicator" style="position: fixed; top: 0; left: 0; bottom: 0; width: 6px; z-index: 1000; background-color: var(--aa-red); transition: background-color 0.3s;"></div>
   <div id="mod-info" class="mod-panel" style="max-height: 80vh; overflow-y: auto;">
         <h3 style="color: var(--accent); margin-top:0; text-align:center;">Galley Cheat Sheet</h3>
         <div style="font-size: 13px; line-height: 1.5; margin-bottom: 15px;">
@@ -264,6 +264,11 @@
             document.querySelectorAll('.carrier-btn').forEach(b => b.classList.toggle('active', b.classList.contains(c.toLowerCase())));
             closeSub(); 
             render(); // Re-render to update seat letters based on airline
+            
+            // UPDATE THE SIDE COLOR INDICATOR
+            const colors = { 'AA': 'var(--aa-red)', 'DL': 'var(--dl-blue)', 'UA': 'var(--ua-blue)' };
+            document.getElementById('side-indicator').style.backgroundColor = colors[c];
+       
         }
 
         function quickAdd(item) {
