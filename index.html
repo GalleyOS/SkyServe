@@ -209,10 +209,8 @@
             let rowNums = [1, 2, 3, 4]; // Expanded rows slightly to see the flip better
             if (isReversed) rowNums.reverse();
 
-            // Delta uses A,B,C. UA/AA uses A,D,F
-            let seatLayout = currC === 'DL' ? ['A', 'B', 'aisle', 'C',] : ['A', 'aisle', 'D', 'F']; 
-            // Delta specific adjustment: if you strictly meant 3 seats 'A','B','C', we use:
-            if (currC === 'DL') seatLayout = ['A','aisle', 'B', 'C']; 
+// AA uses A, D, F. Delta and United use A, B, C.
+            let seatLayout = (currC === 'DL' || currC === 'UA') ? ['A', 'aisle', 'B', 'C'] : ['A', 'aisle', 'D', 'F'];
 
             if (isReversed) seatLayout.reverse();
 
