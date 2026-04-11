@@ -124,7 +124,7 @@
             <div class="menu-grid">
                 <button class="menu-item" onclick="openGen('Water', 'soft')">Water</button>
                 <button class="menu-item" onclick="openHot('Coffee')">Coffee</button>
-                <button class="menu-item" onclick="openHot('Tea')">Tea</button>
+                <button class="menu-item" onclick="currC === 'UA' ? openSub('tea', '🍵 Teas') : openHot('Tea')">Tea</button>
                 
                 <button class="menu-item direct-btn" onclick="quickAdd('Just Ice')">Just Ice</button>
                 <button class="menu-item" onclick="quickAdd('Other')">Other ⌨️</button>
@@ -175,18 +175,19 @@
                     beer: ["Miller Lite","Sweetwater","Voodoo Ranger"],
                     wine: ["White","Red"],
                     sparkling: ["Sparkling"],
-                    liquor: ["Buffalo Trace", "Gin","Rum","Bourbon Cream","Scotch","Jack","Tequila","Vodka"]
+                    liquor: ["Vodka","Rum","Gin","Tequila","Bourbon Cream","Scotch","Jack","Buffalo Trace",]
                 }
             },
             UA: { 
-                soda: ["Coke", "Coke Zero", "Diet Coke", "Sprite", "Ginger Ale"],
-                juice: ["Tomato", "OJ", "Apple", "Cranberry"],
-                mixers: ["Club"],
+                soda: ["Coke", "Diet Coke", "Coke Zero", "Sprite", "Ginger Ale"],
+                juice: ["Lemonade", "OJ", "Apple", "Cranberry", "Tomato"],
+                mixers: ["Seltzer", "Tonic","AHA Blueberry", "AHA Pineapple", "BMM"],
+                tea: ["Lemon Ginger", "Green Tea", "Black Tea"],
                 alc: {
-                    beer: ["Miller Lite", "White Claw"],
-                    wine: ["White","Red"],
-                    sparkling: [],
-                    liquor: ["Vodka", "Jack", "Buffalo Trace"]
+                    beer: ["Michelob Ultra", "Stella", "Bell's IPA"],
+                    wine: ["White","Red", "Rose"],
+                    sparkling: ["Sparkling"],
+                    liquor: ["Vodka", "Rum", "Gin","Tequila", "Bailey's", "Jack","Bourbon", "Scotch","Espresso Martini","Vodka Spritz"]
                 }
             }
         };
@@ -333,6 +334,7 @@
                     btn.onclick = () => {
                         if (cat === 'soda' || cat === 'mixers') openGen(item, 'soft');
                         else if (cat === 'juice') addOrder(item); 
+                        else if (cat === 'tea') { closeSub(); openHot(item); }
                     };
                     container.appendChild(btn);
                 });
