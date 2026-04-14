@@ -85,7 +85,7 @@
     </div>
 
     <div class="header">
-        <strong>E175</strong><button onclick="document.getElementById('mod-info').classList.add('active')" style="background:none; border:1px solid #888; color:#888; border-radius:50%; width:22px; height:22px; font-size:12px; margin-left:8px; vertical-align: middle;">?</button>
+        <strong>737</strong><button onclick="document.getElementById('mod-info').classList.add('active')" style="background:none; border:1px solid #888; color:#888; border-radius:50%; width:22px; height:22px; font-size:12px; margin-left:8px; vertical-align: middle;">?</button>
         <div class="carrier-toggles">
             <button class="carrier-btn aa active" onclick="setCarrier('AA')">AA</button>
             <button class="carrier-btn dl" onclick="setCarrier('DL')">DL</button>
@@ -210,8 +210,8 @@
             let rowNums = [1, 2, 3, 4]; // Expanded rows slightly to see the flip better
             if (isReversed) rowNums.reverse();
 
-// AA uses A, D, F. Delta and United use A, B, C.
-            let seatLayout = (currC === 'DL' || currC === 'UA') ? ['A', 'aisle', 'B', 'C'] : ['A', 'aisle', 'D', 'F'];
+// AA uses A,C, D, F. Delta and United use A, B, C,D.
+            let seatLayout = (currC === 'DL' || currC === 'UA') ? ['A', 'B','aisle', 'C', 'D'] : ['A', 'C' 'aisle', 'D', 'F'];
 
             if (isReversed) seatLayout.reverse();
 
